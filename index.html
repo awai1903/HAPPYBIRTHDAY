@@ -2447,7 +2447,13 @@ function startDoorScene() {
   gsap.from(container, { opacity: 0, y: 30, duration: 1.2, ease: 'power3.out' });
 
   // Door / button click handlers
-  document.getElementById('the-door').addEventListener('click', handleDoorOpen, { once: true });
+  const btn = document.getElementById("door-open-btn");
+
+btn.onclick = handleDoorOpen;
+btn.ontouchstart = function(e) {
+    e.preventDefault();
+    handleDoorOpen();
+};
   document.getElementById('door-open-btn').addEventListener('click', handleDoorOpen, { once: true });
 }
 
