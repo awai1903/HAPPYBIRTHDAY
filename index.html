@@ -2624,7 +2624,7 @@ function startGalaxy() {
   const storyWrap = document.getElementById('galaxy-story-wrap');
   const storyLine = document.getElementById('story-line-1');
 
-  const STORY_LINES = [
+
   const STORY_LINES = [
   { text: "Out of billions of people...", delay: 200, gold: false },
   { text: "Every person carries a different story.", delay: 1000, gold: false },
@@ -2640,7 +2640,7 @@ function startGalaxy() {
   function showNextStoryLine() {
     if (storyIdx >= STORY_LINES.length) {
       // After all lines shown, auto-advance to scene 4
-      storyTimeout = setTimeout(() => transitionToScene(4), 2500);
+      storyTimeout = setTimeout(() => transitionToScene(4), 1000);
       return;
     }
     const line = STORY_LINES[storyIdx];
@@ -2660,7 +2660,7 @@ function startGalaxy() {
           storyIdx++;
           showNextStoryLine();
         }
-      }, 45);
+      }, 20);
     }, line.delay);
   }
   showNextStoryLine();
