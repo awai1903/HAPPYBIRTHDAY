@@ -1,144 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hamna's 21st Birthday 🎉</title>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Quicksand', sans-serif;
-      background: linear-gradient(to bottom right, #ffc0cb, #ffb6c1);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Hamna ✨</title>
 
-    h1 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
-    .countdown-container {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .countdown-item {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 10px;
-      box-shadow: 0 0 20px rgba(255, 192, 203, 0.5);
-      backdrop-filter: blur(5px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      animation: blink 1s infinite;
-    }
-
-    .countdown-item span {
-      display: block;
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: white;
-    }
-
-    .unlock-msg {
-      margin-top: 30px;
-      background: rgba(255, 255, 255, 0.2);
-      padding: 10px 20px;
-      border-radius: 20px;
-      font-weight: bold;
-      color: #fff;
-      animation: pulse 2s infinite;
-    }
-
-   @keyframes blink {
-      0%, 100% {
-        box-shadow: 0 0 20px rgba(255, 192, 203, 0.5);
-      }
-      50% {
-        box-shadow: 0 0 35px rgba(255, 255, 255, 0.7);
-      }
-    }
-
-    @keyframes pulse {
-      0% { background-color: rgba(255,255,255,0.2); }
-      50% { background-color: rgba(255,255,255,0.4); }
-      100% { background-color: rgba(255,255,255,0.2); }
-    }
-  </style>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <h1>💖 Countdown for Hamna's 22st Birthday 💖</h1>
+<div id="stars"></div>
 
-  <div class="countdown-container" id="countdown">
-    <!-- Countdown items will load here -->
-  </div>
+<div class="container">
 
-  <div class="unlock-msg">🎁 Surprise Unlocks on 3 August 2026 🎁</div>
+<h2 class="small">A Little Surprise...</h2>
 
-  <script>
-    const targetDate = new Date("August 3, 2026 00:00:00").getTime();
+<h1>Happy Birthday</h1>
 
-function updateCountdown() {
-  const now = new Date().getTime();
-  const distance = targetDate - now;
+<h3 class="name">Hamna Khalid 🌸</h3>
 
-  const months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
-  const days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+<div class="countdown">
+<div>
+<span id="days">0</span>
+<p>Days</p>
+</div>
 
-  if (distance < 0) {
-    document.getElementById("countdown").innerHTML = "🎉 Happy Birthday Hamna! 🎉";
-    const msg = document.querySelector('.unlock-msg');
-    msg.innerText = "🎁 Your Surprise is Unlocked!";
+<div>
+<span id="hours">0</span>
+<p>Hours</p>
+</div>
 
-    // 🎈 Add surprise button
-    const btn = document.createElement("button");
-    btn.innerText =  "🎁 Your Surprise is Unlocked!";
-    btn.style.marginTop = "20px";
-    btn.style.padding = "12px 24px";
-    btn.style.borderRadius = "30px";
-    btn.style.border = "none";
-    btn.style.backgroundColor = "#ff69b4";
-    btn.style.color = "white";
-    btn.style.fontWeight = "bold";
-    btn.style.fontSize = "1rem";
-    btn.style.cursor = "pointer";
-    btn.style.boxShadow = "0 0 20px rgba(255, 192, 203, 0.8)";
-    btn.onclick = () => {
-      window.location.href = "surprise.html"; //
-    };
-    document.body.appendChild(btn);
+<div>
+<span id="minutes">0</span>
+<p>Minutes</p>
+</div>
 
-    clearInterval(timer); // Stop the interval
-    return;
-  }
+<div>
+<span id="seconds">0</span>
+<p>Seconds</p>
+</div>
 
-  document.getElementById("countdown").innerHTML = `
-    <div class="countdown-item"><span>${months}</span>Months</div>
-    <div class="countdown-item"><span>${days}</span>Days</div>
-    <div class="countdown-item"><span>${hours}</span>Hours</div>
-    <div class="countdown-item"><span>${minutes}</span>Minutes</div>
-    <div class="countdown-item"><span>${seconds}</span>Seconds</div>
-  `;
-}
-const timer = setInterval(updateCountdown, 1000);
+</div>
 
-  </script>
+<div class="card">
+
+<p id="typing"></p>
+
+<button onclick="showWish()">Open Your Surprise 🎁</button>
+
+</div>
+
+<div id="wish" class="hidden">
+
+<h2>✨ Wishing You Happiness ✨</h2>
+
+<p>
+
+May Allah bless you with happiness, success,
+peace and countless beautiful moments.
+
+Keep smiling.
+
+Keep shining.
+
+Have a wonderful birthday.
+
+🎂🎉🌸
+
+</p>
+
+<h3>— From Someone Who Admires You ❤️</h3>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
