@@ -2444,9 +2444,10 @@ function startDoorScene() {
   // Animate door entrance
   const container = document.getElementById('door-container');
   gsap.from(container, { opacity: 0, y: 30, duration: 1.2, ease: 'power3.out' });
-
-
-
+  
+setTimeout(handleDoorOpen, 1000);
+  
+}
 function handleDoorOpen() {
   console.log("Door Open Clicked");
 alert("Door Open Clicked");
