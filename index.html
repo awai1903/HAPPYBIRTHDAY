@@ -88,52 +88,7 @@
       overflow: hidden;
       width: 100vw;
       height: 100vh;
-      cursor: none;
-    }
-
-    /* ═══════════════════════════════════════════════════════════
-       CUSTOM CURSOR
-    ═══════════════════════════════════════════════════════════ */
-    #cursor {
-      position: fixed;
-      width: 12px;
-      height: 12px;
-      background: var(--gold-bright);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 99999;
-      transform: translate(-50%, -50%);
-      transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
-      mix-blend-mode: screen;
-      box-shadow: 0 0 20px var(--gold-bright), 0 0 40px rgba(245,200,66,0.4);
-    }
-
-    #cursor-trail {
-      position: fixed;
-      width: 36px;
-      height: 36px;
-      border: 1px solid rgba(245,200,66,0.4);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 99998;
-      transform: translate(-50%, -50%);
-      transition: transform 0.25s ease, left 0.25s ease, top 0.25s ease;
-      backdrop-filter: blur(1px);
-    }
-
-    /* ═══════════════════════════════════════════════════════════
-       MOUSE GLOW HALO
-    ═══════════════════════════════════════════════════════════ */
-    #mouse-glow {
-      position: fixed;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(107,33,168,0.12) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate(-50%, -50%);
-      transition: left 0.8s ease, top 0.8s ease;
+      cursor: auto;
     }
 
     /* ═══════════════════════════════════════════════════════════
@@ -1644,13 +1599,7 @@
   </style>
 </head>
 <body>
-
-<!-- ═══════════════════════════════════════════════════════════
-     CUSTOM CURSOR
-═══════════════════════════════════════════════════════════ -->
-<div id="cursor"></div>
-<div id="cursor-trail"></div>
-<div id="mouse-glow"></div>
+p
 
 <!-- ═══════════════════════════════════════════════════════════
      SCENE NAVIGATION DOTS
