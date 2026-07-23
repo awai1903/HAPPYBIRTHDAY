@@ -2446,16 +2446,10 @@ function startDoorScene() {
   const container = document.getElementById('door-container');
   gsap.from(container, { opacity: 0, y: 30, duration: 1.2, ease: 'power3.out' });
 
-  // Door / button click handlers
-  const btn = document.getElementById("door-open-btn");
-
-btn.onclick = handleDoorOpen;
-btn.ontouchstart = function(e) {
-    e.preventDefault();
+  // Door automatically opens after 1 second
+setTimeout(() => {
     handleDoorOpen();
-};
-  document.getElementById('door-open-btn').addEventListener('click', handleDoorOpen, { once: true });
-}
+}, 1000);
 
 function handleDoorOpen() {
   console.log("Door Open Clicked");
