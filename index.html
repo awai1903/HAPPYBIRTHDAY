@@ -3401,17 +3401,22 @@ document.addEventListener('touchstart', (e) => {
 }, { passive: true });
 
 document.addEventListener('touchend', (e) => {
-  if (currentScene === 1) return;
+  if (currentScene === 1 || isTransitioning) return;
+
+  // Ignore pinch zoom (2 ya zyada fingers)
+  if (e.changedTouches.length !== 1) return;
+
   const dx = e.changedTouches[0].clientX - touchStartX;
   const dy = e.changedTouches[0].clientY - touchStartY;
+
   const absDx = Math.abs(dx);
   const absDy = Math.abs(dy);
 
-  // Only trigger if swipe is significant and primarily horizontal
-  if (absDx > 50 && absDx > absDy) {
-    if (dx < 0 && currentScene < TOTAL_SCENES && !isTransitioning) {
+  // Swipe sirf tab chale jab movement bohat clear ho
+  if (absDx > 80 && absDy < 30) {
+    if (dx < 0 && currentScene < TOTAL_SCENES) {
       transitionToScene(currentScene + 1);
-    } else if (dx > 0 && currentScene > 2 && !isTransitioning) {
+    } else if (dx > 0 && currentScene > 2) {
       transitionToScene(currentScene - 1);
     }
   }
