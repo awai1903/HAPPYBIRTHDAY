@@ -2887,14 +2887,14 @@ setTimeout(() => {
 }, 2000);
 
   // Close letter modal
-  document.getElementById('letter-close-btn').addEventListener('click', () => {
+  document.getElementById('letter-close-btn').addEventListener('pointerup', () => {
     fullView.classList.remove('open');
   });
-  fullView.addEventListener('click', (e) => {
+  fullView.addEventListener('pointerup', (e) => {
     if (e.target === fullView) fullView.classList.remove('open');
   });
 
-  nextBtn.addEventListener('click', () => transitionToScene(7), { once: true });
+  nextBtn.addEventListener('pointerup', () => transitionToScene(7), { once: true });
 }
 
 /* ═══════════════════════════════════════════════════════════
