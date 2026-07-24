@@ -2885,12 +2885,10 @@ function startLetter() {
     nextBtn.style.pointerEvents = 'all';
   }, 900);
 }
-
-envWrap.addEventListener('click', openEnvelope, { once: true });
-envWrap.addEventListener('touchstart', (e) => {
-  e.preventDefault();
-  openEnvelope();
-}, { once: true, passive: false });
+// Automatically open envelope after 2 seconds
+setTimeout(() => {
+    openEnvelope();
+}, 2000);
 
   // Close letter modal
   document.getElementById('letter-close-btn').addEventListener('click', () => {
