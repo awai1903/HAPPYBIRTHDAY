@@ -2872,20 +2872,25 @@ function startLetter() {
   });
 
   // Open envelope on click
-  envWrap.addEventListener('click', () => {
-    if (envelopeOpened) return;
-    envelopeOpened = true;
-    envelope.classList.add('opened');
-    hint.textContent = 'A letter unfolds...';
+  function openEnvelope() {
+  if (envelopeOpened) return;
+  envelopeOpened = true;
 
-    // After envelope opens, show full letter modal
-    setTimeout(() => {
-      fullView.classList.add('open');
-      // Show next button
-      gsap.to(nextBtn, { opacity: 1, duration: 0.6, delay: 1.5 });
-      nextBtn.style.pointerEvents = 'all';
-    }, 900);
-  }, { once: true });
+  envelope.classList.add('opened');
+  hint.textContent = 'A letter unfolds...';
+
+  setTimeout(() => {
+    fullView.classList.add('open');
+    gsap.to(nextBtn, { opacity: 1, duration: 0.6 });
+    nextBtn.style.pointerEvents = 'all';
+  }, 900);
+}
+
+envWrap.addEventListener('click', openEnvelope, { once: true });
+envWrap.addEventListener('touchstart', (e) => {
+  e.preventDefault();
+  openEnvelope();
+}, { once: true, passive: false });
 
   // Close letter modal
   document.getElementById('letter-close-btn').addEventListener('click', () => {
