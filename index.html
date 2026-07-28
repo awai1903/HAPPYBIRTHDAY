@@ -646,7 +646,7 @@
         });
         $('flowersLayer').innerHTML = fhtml;
         $('flowersCta').innerHTML = '';
-        after(5200, function(){ $('flowersCta').appendChild(makeButton('Open the letter', advance)); });
+        after(5200, function(){ $('flowersCta').appendChild(makeButton('Continue', advance)); });
       }
 
       /* ============================================================
@@ -679,7 +679,7 @@
           html += '</div>';
           $('letterSlot').innerHTML = html;
         });
-        after(5200, function(){ $('envCta').appendChild(makeButton('A prayer for you', advance)); });
+        after(5200, function(){ $('envCta').appendChild(makeButton('Continue', advance)); });
       }
 
       /* ============================================================
@@ -704,7 +704,7 @@
             ameen.textContent = "Ameen Ya Rabb-ul-\u2018Alameen.";
             panel.appendChild(ameen);
             panel.scrollTop = panel.scrollHeight;
-            after(1200, function(){ cta.appendChild(makeButton('Your gift awaits', advance)); });
+            after(1200, function(){ cta.appendChild(makeButton('Continue', advance)); });
             return;
           }
           var p = document.createElement('p');
@@ -768,7 +768,7 @@
         }
         spawnBurst();
         var interval = later(900, spawnBurst);
-        after(6000, function(){ $('fwCta').appendChild(makeButton('The final page', advance)); });
+        after(6000, function(){ $('fwCta').appendChild(makeButton('Continue', advance)); });
       }
 
       /* ============================================================
